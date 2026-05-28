@@ -1,61 +1,15 @@
-/* DESIGN TOKENS */
+/* DESIGN SYSTEM TOKENS */
 :root {
   --primary: #0f172a;
   --secondary: #2563eb;
   --light: #ffffff;
-  --dark: #020617;
-  --text-light: #1e293b;
-  --text-dark: #f8fafc;
-  --bg-light: #f8fafc;
-  --bg-dark: #0b1120;
-  --card-light: #ffffff;
-  --card-dark: #1e293b;
+  --dark: #0b1120;
+  --text: #1e293b;
+  --card: rgba(255, 255, 255, 0.95);
   --shadow: rgba(0, 0, 0, 0.08);
 }
-/* UNIVERSAL PROFILE IMAGE WRAPPER */
-.profile-image-wrap {
-  margin: 0 auto;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
-  background-color: #e2e8f0; /* Soft gray fallback placeholder color while images load */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 4px solid var(--secondary);
-  transition: transform 0.3s ease;
-}
 
-body.dark .profile-image-wrap {
-  background-color: #334155;
-}
-
-/* Enforce perfect sizing constraints */
-.profile-image-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Forces images to crop nicely without distorting proportions */
-  object-position: center;
-  display: block;
-}
-
-/* Specific Dimensions for About Section vs Recruits Grid */
-.ceo-avatar {
-  width: 180px;
-  height: 180px;
-  margin-bottom: 20px;
-}
-
-.recruit-avatar {
-  width: 110px;
-  height: 110px;
-  margin-bottom: 15px;
-  border-width: 3px; /* Slightly thinner border for small cards */
-}
-
-/* CLEANUP OLD RULES: Remove your old '.ceo-card img' and '.recruit-card img' sizes from styles.css to avoid conflicts */
-
-/* GLOBAL RESET */
+/* GLOBAL RESET & BASE STYLES */
 * {
   margin: 0;
   padding: 0;
@@ -65,32 +19,33 @@ body.dark .profile-image-wrap {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-light);
-  color: var(--text-light);
-  transition: background-color 0.3s, color 0.3s;
+  background: #f8fafc;
+  color: var(--text);
+  transition: background-color 0.4s, color 0.4s;
   overflow-x: hidden;
 }
 
 body.dark {
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
-}
+  background: #020617;
+  color: white;
+  --card: #1e293b;
+  --text: #f8fafc;
+} 
 
-/* REUSABLE SECTIONS */
 .section-padding {
   padding: 100px 8% 60px 8%;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .section-title h2 {
-  font-size: 38px;
-  margin-bottom: 12px;
+  font-size: 42px;
+  margin-bottom: 10px;
   font-weight: 700;
-}
+} 
 
 .section-title p {
   color: #64748b;
@@ -101,28 +56,27 @@ body.dark .section-title p {
   color: #94a3b8;
 }
 
-/* NAVIGATION */
+/* NAVBAR */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
-  box-shadow: 0 2px 10px var(--shadow);
-  transition: background 0.3s;
+  box-shadow: 0 2px 15px var(--shadow);
 }
 
 body.dark header {
-  background: rgba(11, 17, 32, 0.8);
+  background: rgba(11, 17, 32, 0.85);
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 15px 4%;
 }
@@ -130,7 +84,7 @@ body.dark header {
 .logo-section {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .logo-section img {
@@ -139,14 +93,14 @@ body.dark header {
 }
 
 .logo-section h2 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 25px;
+  gap: 30px;
 }
 
 .nav-links a {
@@ -192,24 +146,26 @@ body.dark header {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(0, 0, 0, 0.6);
   z-index: -1;
 }
 
 .hero-content {
-  text-align: center;
+  position: relative;
+  z-index: 2;
   color: white;
+  text-align: center;
   padding: 0 20px;
 }
 
 .hero-content h1 {
-  font-size: 64px;
-  margin-bottom: 15px;
+  font-size: 68px;
+  margin-bottom: 20px;
   font-weight: 700;
 }
 
 .hero-content p {
-  font-size: 24px;
+  font-size: 26px;
   margin-bottom: 35px;
   font-weight: 300;
 }
@@ -217,52 +173,52 @@ body.dark header {
 .hero-btn {
   background: var(--secondary);
   color: white;
-  padding: 14px 36px;
+  padding: 15px 40px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 500;
-  transition: transform 0.2s, background 0.2s;
   display: inline-block;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .hero-btn:hover {
-  transform: translateY(-3px);
-  background: #1d4ed8;
+  transform: translateY(-4px);
+  background-color: #1d4ed8;
 }
 
 /* ABOUT SECTION */
 .about-container {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1.3fr 1fr;
   gap: 50px;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.about-text p {
-  line-height: 1.8;
+.about-text {
+  line-height: 1.9;
   font-size: 16px;
-  margin-bottom: 20px;
   color: #475569;
 }
 
-body.dark .about-text p {
+body.dark .about-text {
   color: #cbd5e1;
 }
 
-.ceo-card {
-  background: var(--card-light);
-  padding: 35px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px var(--shadow);
-  transition: background 0.3s, transform 0.2s;
+.about-text p {
+  margin-bottom: 20px;
 }
 
-body.dark .ceo-card {
-  background: var(--card-dark);
+.ceo-card {
+  background: var(--card);
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px var(--shadow);
+  border: 1px solid rgba(0,0,0,0.03);
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .ceo-card:hover {
@@ -276,6 +232,7 @@ body.dark .ceo-card {
   border-radius: 50%;
   margin-bottom: 20px;
   border: 4px solid var(--secondary);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .ceo-card h3 {
@@ -298,17 +255,12 @@ body.dark .ceo-card {
 }
 
 .job-card {
-  background: var(--card-light);
+  background: var(--card);
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 4px 20px var(--shadow);
-  transition: transform 0.2s, background 0.3s;
-  border: 1px solid rgba(0,0,0,0.02);
-}
-
-body.dark .job-card {
-  background: var(--card-dark);
-  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.3s, border-color 0.3s;
+  border: 1px solid transparent;
 }
 
 .job-card:hover {
@@ -342,16 +294,12 @@ body.dark .job-card p {
 }
 
 .recruit-card {
-  background: var(--card-light);
-  padding: 25px;
-  border-radius: 16px;
+  background: var(--card);
+  padding: 30px;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 4px 20px var(--shadow);
-  transition: background 0.3s, transform 0.2s;
-}
-
-body.dark .recruit-card {
-  background: var(--card-dark);
+  box-shadow: 0 4px 25px var(--shadow);
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .recruit-card:hover {
@@ -359,15 +307,16 @@ body.dark .recruit-card {
 }
 
 .recruit-card img {
-  width: 110px;
-  height: 110px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
+  border: 3px solid rgba(37, 99, 235, 0.2);
 }
 
 .recruit-card h3 {
-  font-size: 18px;
+  font-size: 19px;
   margin-bottom: 4px;
 }
 
@@ -376,22 +325,22 @@ body.dark .recruit-card {
   color: #64748b;
 }
 
+body.dark .recruit-card p {
+  color: #94a3b8;
+}
+
 /* APPLICATION FORM */
 .application-form {
   max-width: 650px;
   margin: 0 auto;
-  background: var(--card-light);
+  background: var(--card);
   padding: 40px;
-  border-radius: 20px;
+  border-radius: 24px;
   box-shadow: 0 10px 30px var(--shadow);
   display: flex;
   flex-direction: column;
   gap: 20px;
-  transition: background 0.3s;
-}
-
-body.dark .application-form {
-  background: var(--card-dark);
+  transition: background-color 0.3s;
 }
 
 .application-form input,
@@ -400,7 +349,7 @@ body.dark .application-form {
   width: 100%;
   padding: 14px;
   border: 1px solid #cbd5e1;
-  border-radius: 8px;
+  border-radius: 10px;
   font-family: inherit;
   font-size: 15px;
   background: transparent;
@@ -426,15 +375,15 @@ body.dark .application-form textarea {
   color: white;
   border: none;
   padding: 16px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
 }
 
 .application-form button:hover {
-  background: #1d4ed8;
+  background-color: #1d4ed8;
 }
 
 /* CONTACT & MAP */
@@ -447,15 +396,11 @@ body.dark .application-form textarea {
 }
 
 .contact-info {
-  background: var(--card-light);
+  background: var(--card);
   padding: 40px;
-  border-radius: 20px;
+  border-radius: 24px;
   box-shadow: 0 4px 20px var(--shadow);
-  transition: background 0.3s;
-}
-
-body.dark .contact-info {
-  background: var(--card-dark);
+  transition: background-color 0.3s;
 }
 
 .contact-info h3 {
@@ -464,19 +409,18 @@ body.dark .contact-info {
 }
 
 .contact-info p {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   font-size: 15.5px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 }
 
 .contact-info strong {
   color: var(--secondary);
+  display: block;
+  margin-bottom: 4px;
 }
 
 .map-container {
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 4px 20px var(--shadow);
 }
@@ -484,7 +428,7 @@ body.dark .contact-info {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 35px;
   background: var(--primary);
   color: #94a3b8;
   font-size: 14px;
@@ -498,6 +442,6 @@ footer {
     grid-template-columns: 1fr;
   }
   .hero-content h1 { font-size: 46px; }
-  .hero-content p { font-size: 18px; }
-  .nav-links { display: none; } /* Simplified for deployment; standard implementation uses hamburger toggles */
+  .hero-content p { font-size: 20px; }
+  .nav-links { display: none; }
 }
