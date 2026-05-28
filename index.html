@@ -9,272 +9,196 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-   <header>
+  <header>
     <nav class="navbar">
-
       <div class="logo-section">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="logo">
-        <h2>Pratik Human Resource</h2>
+        <img src="/Assets/images/pratik-profile.jpg" alt="logo">
+        <h2>Pratik HR</h2>
       </div>
 
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#jobs">Jobs</a></li>
-        <li><a href="#recruit">Recruit Profile</a></li>
-        <li><a href="#application">Application</a></li>
-        <li><a href="#contact">Contacts</a></li>
+        <li><a href="#recruit">Recruits</a></li>
+        <li><a href="#application">Apply</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <button id="theme-toggle">🌙</button>
-
-       <!-- HERO SECTION -->
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+  </header>
 
   <section class="hero" id="home">
-
     <video autoplay muted loop playsinline class="hero-video">
       <source src="https://cdn.coverr.co/videos/coverr-modern-office-building-1561883819596?download=1080p" type="video/mp4">
     </video>
-
     <div class="hero-overlay"></div>
-
     <div class="hero-content">
       <h1>Pratik Human Resource</h1>
       <p>Best Jobs Available in Nepal</p>
       <a href="#jobs" class="hero-btn">Explore Opportunities</a>
     </div>
-
   </section> 
 
-       <!-- ABOUT SECTION -->
-
   <section class="about section-padding" id="about">
-
     <div class="section-title">
       <h2>About Us</h2>
       <p>Empowering Nepal Through Professional Human Resource Services</p>
     </div>
 
     <div class="about-container">
-
       <div class="about-text">
-        <p>
-          Pratik Human Resource is a modern employment and recruitment company dedicated to connecting talented individuals with the best companies in Nepal. We specialize in providing skilled professionals to industries such as healthcare, engineering, hospitality, design, management, administration, and technology.
-        </p>
-
-        <p>
-          Our mission is to create career opportunities for individuals while helping organizations build stronger teams. With advanced recruitment strategies, professional consultation, and client-oriented services, we ensure quality, trust, and long-term professional success.
-        </p>
-
-        <p>
-          We believe in innovation, professionalism, and ethical recruitment processes that uplift businesses and communities throughout Nepal.
-        </p>
+        <p>Pratik Human Resource is a modern employment and recruitment company dedicated to connecting talented individuals with the best companies in Nepal. We specialize in providing skilled professionals to industries such as healthcare, engineering, hospitality, design, management, administration, and technology.</p>
+        <p>Our mission is to create career opportunities for individuals while helping organizations build stronger teams. With advanced recruitment strategies, professional consultation, and client-oriented services, we ensure quality, trust, and long-term professional success.</p>
+        <p>We believe in innovation, professionalism, and ethical recruitment processes that uplift businesses and communities throughout Nepal.</p>
       </div> 
-        <div class="ceo-card">
-        <img src="/Assets/images/pratik-profile.jpg" alt="CEO">
+      
+      <div class="ceo-card">
+        <img src="/Assets/images/pratik cartoon.jpg" alt="CEO">
         <h3>Pratik Adhikari</h3>
-        <p>Founder & CEO</p>
+        <p class="title">Founder & CEO</p>
       </div>
-
     </div>
-
   </section> 
 
-       <!-- JOBS SECTION -->
-
   <section class="jobs section-padding" id="jobs">
-
     <div class="section-title">
       <h2>Available Jobs</h2>
       <p>Explore career opportunities across Nepal</p>
     </div>
 
     <div class="job-grid">
-
       <div class="job-card">
         <h3>Human Resource Manager</h3>
         <p>Lead recruitment, employee engagement, and company operations.</p>
       </div>
-
       <div class="job-card">
         <h3>Receptionist</h3>
         <p>Manage front desk operations and customer interactions professionally.</p>
       </div>
-
       <div class="job-card">
         <h3>Doctor</h3>
         <p>Healthcare professionals required for hospitals and clinics.</p>
       </div> 
-       <div class="job-card">
+      <div class="job-card">
         <h3>Engineer</h3>
         <p>Civil, software, electrical, and mechanical engineers needed.</p>
       </div>
-
       <div class="job-card">
         <h3>Visual Artist</h3>
         <p>Creative professionals for branding, media, and visual storytelling.</p>
       </div>
-
       <div class="job-card">
         <h3>Designer</h3>
         <p>UI/UX, graphic, and product designers for modern companies.</p>
       </div>
-
       <div class="job-card">
         <h3>Supervisor</h3>
         <p>Monitor teams, operations, and workflow efficiency.</p>
       </div>
-
       <div class="job-card">
         <h3>Office Assistant</h3>
         <p>Administrative and office support roles available.</p>
       </div>
-
     </div>
-
   </section> 
 
-       <!-- RECRUIT PROFILE SECTION -->
-
   <section class="recruit section-padding" id="recruit">
-
     <div class="section-title">
       <h2>Recently Recruited Professionals</h2>
       <p>Success stories from our trusted recruitment network</p>
     </div>
 
     <div class="recruit-grid">
-
       <div class="recruit-card">
-        <img src="/Assets/images/Engaged (1).png" alt="person">
-        <h3>JOHN</h3>
+        <img src="/Assets/images/Engaged (1).png" alt="John">
+        <h3>John</h3>
         <p>Software Engineer</p>
       </div>
-
       <div class="recruit-card">
-        <img src="/Assets/images/pratik cartoon.jpg" alt="person">
+        <img src="/Assets/images/pratik-profile.jpg" alt="Plato">
         <h3>Plato</h3>
         <p>Human Resource Officer</p>
       </div>
-
       <div class="recruit-card">
-        <img src="/Assets/images/Pratik wife" alt="person">
+        <img src="/Assets/images/Pratik wife.jpg" alt="Eve">
         <h3>Eve</h3>
         <p>Project Supervisor</p>
       </div> 
-
-      
       <div class="recruit-card">
-        <img src="/Assets/images/pratik-profile.jpg" alt="person">
+        <img src="/Assets/images/pratik cartoon.jpg" alt="Aristotle">
         <h3>Aristotle</h3>
         <p>Visual Designer</p>
       </div>
-
     </div>
-
   </section> 
 
-       <!-- APPLICATION SECTION -->
-
   <section class="application section-padding" id="application">
-
     <div class="section-title">
       <h2>Application Form</h2>
       <p>Apply for your dream career</p>
     </div>
 
-    <form class="application-form">
-
+    <form class="application-form" id="jobAppForm">
       <input type="text" placeholder="Full Name" required>
-
-      <input type="number" placeholder="Age" required>
-
+      <input type="number" placeholder="Age" min="18" required>
       <input type="text" placeholder="Education Qualification" required>
-
       <input type="text" placeholder="Preferred Company Name" required>
-
-      <select>
-        <option>Select Role</option>
+      
+      <select required>
+        <option value="" disabled selected>Select Role</option>
         <option>Manager</option>
         <option>Supervisor</option>
         <option>Human Resource</option>
         <option>Receptionist</option>
         <option>Doctor</option> 
-         <option>Engineer</option>
+        <option>Engineer</option>
         <option>Visual Artist</option>
         <option>Designer</option>
       </select>
 
       <textarea rows="5" placeholder="Describe your experience"></textarea>
-
       <button type="submit">Submit Application</button>
-
     </form>
-
   </section>
 
- <!-- CONTACT SECTION -->
-
   <section class="contact section-padding" id="contact">
-
     <div class="section-title">
       <h2>Contact Us</h2>
       <p>Pratik Human Resource Pvt. Ltd.</p>
     </div>
 
     <div class="contact-container">
-
       <div class="contact-info">
-
         <h3>Company Information</h3>
-
         <p><strong>Location:</strong> Gwarko, Lalitpur, Nepal</p>
         <p><strong>Phone:</strong> +977-9800000000</p>
         <p><strong>Email:</strong> pratik_mhnrs2023@kusoa.edu.np</p>
         <p><strong>Office Hours:</strong> Sun - Fri | 9 AM - 6 PM</p>
-
       </div>
 
       <div class="map-container">
-
         <iframe
-          src="https://www.google.com/maps?q=Gwarko,Lalitpur,Nepal&output=embed"
+          src="https://maps.google.com/maps?q=Gwarko,%20Lalitpur,%20Nepal&t=&z=14&ie=UTF8&iwloc=&output=embed"
           width="100%"
           height="350"
-           style="border:0;"
+          style="border:0;"
           allowfullscreen=""
           loading="lazy">
         </iframe>
-
       </div>
-
     </div>
-
   </section>
-
-       <!-- FOOTER -->
 
   <footer>
     <p>© 2026 Pratik Human Resource. All Rights Reserved.</p>
   </footer>
 
-
   <script src="script.js"></script>
-
 </body>
-</html> 
-      
-
-
-
-
-
-
-
-    </nav>
-  </header>
+</html>
