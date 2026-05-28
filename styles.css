@@ -12,6 +12,48 @@
   --card-dark: #1e293b;
   --shadow: rgba(0, 0, 0, 0.08);
 }
+/* UNIVERSAL PROFILE IMAGE WRAPPER */
+.profile-image-wrap {
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background-color: #e2e8f0; /* Soft gray fallback placeholder color while images load */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--secondary);
+  transition: transform 0.3s ease;
+}
+
+body.dark .profile-image-wrap {
+  background-color: #334155;
+}
+
+/* Enforce perfect sizing constraints */
+.profile-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Forces images to crop nicely without distorting proportions */
+  object-position: center;
+  display: block;
+}
+
+/* Specific Dimensions for About Section vs Recruits Grid */
+.ceo-avatar {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 20px;
+}
+
+.recruit-avatar {
+  width: 110px;
+  height: 110px;
+  margin-bottom: 15px;
+  border-width: 3px; /* Slightly thinner border for small cards */
+}
+
+/* CLEANUP OLD RULES: Remove your old '.ceo-card img' and '.recruit-card img' sizes from styles.css to avoid conflicts */
 
 /* GLOBAL RESET */
 * {
