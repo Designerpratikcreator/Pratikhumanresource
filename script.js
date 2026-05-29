@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('theme-toggle');
   const body = document.body;
 
-  // Check and implement saved user preference
+  // 1. Manage User Theme Preference Locally
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     body.classList.add('dark');
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.textContent = '🌙';
   }
 
-  // Smooth Toggle Event Handler
+  // 2. Event Listener for Dark/Light Mode Switch
   themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark');
     
@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Client Application Form submission logic
+  // 3. Prevent Form Reloading during Tests
   const appForm = document.getElementById('jobAppForm');
   if (appForm) {
     appForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('Thank you! Your job application has been successfully captured.');
+      alert('Thank you! Your job application profile has been processed successfully.');
       appForm.reset();
     });
   }
