@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('theme-toggle');
   const body = document.body;
 
-  // Sync saved preference from localStorage
+  // Check and implement saved user preference
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     body.classList.add('dark');
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.textContent = '🌙';
   }
 
-  // Theme Switch Event Handler
+  // Smooth Toggle Event Handler
   themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark');
     
@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Client Application Form Handler
+  // Client Application Form submission logic
   const appForm = document.getElementById('jobAppForm');
   if (appForm) {
     appForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('Thank you! Your profile has been compiled and submitted successfully.');
+      alert('Thank you! Your job application has been successfully captured.');
       appForm.reset();
     });
   }
