@@ -22,11 +22,11 @@
 
       <ul class="nav-links">
         <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#Jobs Section"><i class="fas fa-laptop-code"></i> Jobs Section</a></li>
-                <li><a href="#recruit"><i class="fas fa-folder-open"></i> Recruit</a></li>
-                <li><a href="#Application"><i class="fas fa-handshake"></i> Application</a></li>
-                <li><a href="#Contact"><i class="fas fa-envelope-open-text"></i> Contact</a></li>       
+        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#jobs"><i class="fas fa-laptop-code"></i> Jobs Section</a></li>
+        <li><a href="#recruit"><i class="fas fa-folder-open"></i> Recruit</a></li>
+        <li><a href="#application"><i class="fas fa-handshake"></i> Application</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope-open-text"></i> Contact</a></li>       
       </ul>
 
       <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
@@ -142,13 +142,13 @@
       <p>Apply for your dream career</p>
     </div>
 
-    <form class="application-form" id="jobAppForm">
-      <input type="text" placeholder="Full Name" required>
-      <input type="number" placeholder="Age" min="18" required>
-      <input type="text" placeholder="Education Qualification" required>
-      <input type="text" placeholder="Preferred Company Name" required>
+    <form class="application-form main-form" id="jobAppForm" action="https://formspree.io/f/xdkzqdlq" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="number" name="age" placeholder="Age" min="18" required>
+      <input type="text" name="qualification" placeholder="Education Qualification" required>
+      <input type="text" name="preferred_company" placeholder="Preferred Company Name" required>
       
-      <select required>
+      <select name="role" required>
         <option value="" disabled selected>Select Role</option>
         <option>Manager</option>
         <option>Supervisor</option>
@@ -159,8 +159,8 @@
         <option>Visual Artist</option>
         <option>Designer</option>
       </select>
-      <form id="application-form" class="main-form" action="https://formspree.io/f/xdkzqdlq" method="POST">  
-      <textarea rows="5" placeholder="Describe your experience"></textarea>
+      
+      <textarea name="experience" rows="5" placeholder="Describe your experience"></textarea>
       <button type="submit">Submit Application</button>
     </form>
   </section>
@@ -182,7 +182,7 @@
 
       <div class="map-container">
         <iframe
-          src="https://maps.google.com/maps?q=Gwarko,%20Lalitpur,%20Nepal&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d3533.2779083582525!2d85.3292418!3d27.6623542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19dd0c460cf5%3A0xc07dbbfb3699b0c!2sGwarko%2C%20Lalitpur!5e0!3m2!1sen!2snp!4v1700000000000"
           width="100%"
           height="350"
           style="border:0;"
