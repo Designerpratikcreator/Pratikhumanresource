@@ -1,319 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pratik Human Resource</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhikari Digital Arts</title>
+    <meta name="description" content="Adhikari Digital Arts – Premium Curated Fine Art & Digital Collectibles">
+    <meta name="keywords" content="Digital Art, NFT Strategy, Fine Arts, Visual Arts, Creative Painting">
+    <meta name="author" content="Adhikari Art Studio">
+    <meta name="google-site-verification" content="1SrV1svK_3WDsZWAAucFPwoN53Trc5P6F5gzxuYKBK0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome Icons CDN for SVG Payment Logos and Header Navigation -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://AdhikariDigitalArts.vercel.app">
+    <meta property="og:title" content="Adhikari Digital Arts | Masterpiece Portfolio">
+    <meta property="og:description" content="Official platform of Adhikari Digital Arts – Fine Art, NFTs & Creative Strategy.">
+    <meta property="og:image" content="https://AdhikariDigitalArts.vercel.app/Assets/images/pratik-social-share.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://AdhikariDigitalArts.vercel.app/">
+    <meta property="twitter:title" content="Adhikari Digital Arts - Marketplace">
+    <meta property="twitter:description" content="Adhikari Digital Arts is a space where collectors acquire timeless digital creations.">
+    <meta property="twitter:image" content="https://pratikadhikari-com-np.vercel.app/Assets/images/pratik-social-share.jpg">
+    <link rel="canonical" href="https://pratikadhikari-com-np.vercel.app/">
+    <link rel="icon" href="/Assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/Assets/icons/apple-touch-icon.png">
 
-  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-
-  <header>
-    <nav class="navbar">
-      <div class="logo-section">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="logo">
-        <h2>Pratik HR</h2>
-      </div>
-
-      <ul class="nav-links">
-        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-        <li><a href="#jobs"><i class="fas fa-laptop-code"></i> Jobs Section</a></li>
-        <li><a href="#recruit"><i class="fas fa-folder-open"></i> Recruit</a></li>
-        <li><a href="#application"><i class="fas fa-handshake"></i> Application</a></li>
-        <li><a href="#payment"><i class="fas fa-credit-card"></i> Payment</a></li>
-        <li><a href="#contact"><i class="fas fa-envelope-open-text"></i> Contact</a></li>       
-      </ul>
-
-      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-    </nav>
-  </header>
-
-  <section class="hero" id="home">
-    <img src="https://img.freepik.com/free-vector/co-working-concept-illustration_114360-1029.jpg" class="hero-image" alt="Modern 2D Illustrated Office Workspace">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Pratik Human Resource</h1>
-      <p>Best Jobs Available in Nepal</p>
-      <a href="#jobs" class="hero-btn">Explore Opportunities</a>
-    </div>
-  </section> 
-
-  <section class="about section-padding" id="about">
-    <div class="section-title">
-      <h2>About Us</h2>
-      <p>Empowering Nepal Through Professional Human Resource Services</p>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
     </div>
 
-    <div class="about-container">
-      <div class="about-text">
-        <p>Pratik Human Resource is a modern employment and recruitment company dedicated to connecting talented individuals with the best companies in Nepal. We specialize in providing skilled professionals to industries such as healthcare, engineering, hospitality, design, management, administration, and technology.</p>
-        <p>Our mission is to create career opportunities for individuals while helping organizations build stronger teams. With advanced recruitment strategies, professional consultation, and client-oriented services, we ensure quality, trust, and long-term professional success.</p>
-        <p>We believe in innovation, professionalism, and ethical recruitment processes that uplift businesses and communities throughout Nepal.</p>
-      </div> 
-      
-      <div class="ceo-card">
-        <img src="https://img.freepik.com/free-vector/man-profile-cartoon_18591-58482.jpg" alt="CEO - Pratik Adhikari 2D Avatar">
-        <h3>Pratik Adhikari</h3>
-        <p class="title">Founder & CEO</p>
-      </div>
-    </div>
-  </section> 
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
 
-  <section class="jobs section-padding" id="jobs">
-    <div class="section-title">
-      <h2>Available Jobs</h2>
-      <p>Explore career opportunities across Nepal</p>
-    </div>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
 
-    <div class="job-grid">
-      <div class="job-card">
-        <h3>Human Resource Manager</h3>
-        <p>Lead recruitment, employee engagement, and company operations.</p>
-      </div>
-      <div class="job-card">
-        <h3>Receptionist</h3>
-        <p>Manage front desk operations and customer interactions professionally.</p>
-      </div>
-      <div class="job-card">
-        <h3>Doctor</h3>
-        <p>Healthcare professionals required for hospitals and clinics.</p>
-      </div> 
-      <div class="job-card">
-        <h3>Engineer</h3>
-        <p>Civil, software, electrical, and mechanical engineers needed.</p>
-      </div>
-      <div class="job-card">
-        <h3>Visual Artist</h3>
-        <p>Creative professionals for branding, media, and visual storytelling.</p>
-      </div>
-      <div class="job-card">
-        <h3>Designer</h3>
-        <p>UI/UX, graphic, and product designers for modern companies.</p>
-      </div>
-      <div class="job-card">
-        <h3>Supervisor</h3>
-        <p>Monitor teams, operations, and workflow efficiency.</p>
-      </div>
-      <div class="job-card">
-        <h3>Office Assistant</h3>
-        <p>Administrative and office support roles available.</p>
-      </div>
-    </div>
-  </section> 
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
-  <section class="recruit section-padding" id="recruit">
-    <div class="section-title">
-      <h2>Recently Recruited Professionals</h2>
-      <p>Success stories from our trusted recruitment network</p>
-    </div>
-
-    <div class="recruit-grid">
-      <div class="recruit-card">
-        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg" alt="John - Handsome Corporate Professional Avatar">
-        <h3>John</h3>
-        <p>Software Engineer</p>
-      </div>
-      <div class="recruit-card">
-        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg" alt="Plato - Handsome Professional Avatar">
-        <h3>Plato</h3>
-        <p>Human Resource Officer</p>
-      </div>
-      <div class="recruit-card">
-        <img src="https://img.freepik.com/free-vector/elegant-businesswoman-avatar-character_24877-51221.jpg" alt="Eve - Attractive Female Professional Avatar">
-        <h3>Eve</h3>
-        <p>Project Supervisor</p>
-      </div> 
-      <div class="recruit-card">
-        <img src="https://img.freepik.com/free-vector/young-man-avatar-character-vector-illustration-design_24877-62256.jpg" alt="Aristotle - Modern Designer Avatar">
-        <h3>Aristotle</h3>
-        <p>Visual Designer</p>
-      </div>
-    </div>
-  </section> 
-
-  <section class="application section-padding" id="application">
-    <div class="section-title">
-      <h2>Application Form</h2>
-      <p>Apply for your dream career</p>
-    </div>
-
-    <form class="application-form" id="jobAppForm" action="https://formspree.io/f/xdkzqdlq" method="POST">
-      <input type="text" placeholder="Full Name" required>
-      <input type="number" placeholder="Age" min="18" required>
-      <input type="text" placeholder="Education Qualification" required>
-      <input type="text" placeholder="Preferred Company Name" required>
-      
-      <select required>
-        <option value="" disabled selected>Select Role</option>
-        <option>Manager</option>
-        <option>Supervisor</option>
-        <option>Human Resource</option>
-        <option>Receptionist</option>
-        <option>Doctor</option> 
-        <option>Engineer</option>
-        <option>Visual Artist</option>
-        <option>Designer</option>
-      </select>
-      
-      <textarea rows="5" placeholder="Describe your experience"></textarea>
-      <button type="submit">Submit Application</button>
-    </form>
-  </section>
-
-  <!-- PAYMENT GATEWAY SECTION -->
-  <section class="payment section-padding" id="payment">
-    <div class="section-title">
-      <h2>Secure Payment Gateway</h2>
-      <p>Complete application fee process safely</p>
-    </div>
-
-    <div class="payment-wrapper">
-      <!-- Summary Box -->
-      <div class="payment-summary">
-        <h3>Application Details</h3>
-        <div class="summary-item">
-          <span>Processing Fee</span>
-          <span>Rs 5000</span>
-        </div>
-        <div class="summary-item">
-          <span>Tax (13% VAT)</span>
-          <span>Rs 6000</span>
-        </div>
-        <hr class="summary-divider">
-        <div class="summary-item total">
-          <span>Total Payable</span>
-          <span>Rs 13000</span>
-        </div>
-      </div>
-
-      <!-- Payment Methods -->
-      <div class="payment-card">
-        <div class="payment-tabs">
-          <button type="button" class="tab-btn active" data-tab="card">
-            <i class="fas fa-credit-card"></i> Card
-          </button>
-          <button type="button" class="tab-btn" data-tab="paypal">
-            <i class="fab fa-paypal"></i> PayPal
-          </button>
-          <button type="button" class="tab-btn" data-tab="wallet">
-            <i class="fab fa-apple"></i> / <i class="fab fa-google"></i> Express
-          </button>
-        </div>
-
-        <!-- Card Form View -->
-        <form id="paymentForm" class="payment-tab-content active" id-tab="card" novalidate>
-          <div class="card-brand-icons">
-            <i class="fab fa-cc-visa visa-color" title="Visa"></i>
-            <i class="fab fa-cc-mastercard master-color" title="Mastercard"></i>
-            <i class="fab fa-cc-amex amex-color" title="American Express"></i>
-            <i class="fab fa-cc-discover discover-color" title="Discover"></i>
-          </div>
-
-          <div class="form-group">
-            <label for="cardholder-name">Cardholder Name</label>
-            <input type="text" id="cardholder-name" placeholder="John Doe" required>
-            <span class="error-text">Please enter name as printed on card.</span>
-          </div>
-
-          <div class="form-group">
-            <label for="card-number">Card Number</label>
-            <div class="input-with-icon">
-              <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
-              <i class="fas fa-lock input-icon"></i>
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo-brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; margin-right:5px;">
+                    <path d="M19.5 7.5L12 12L4.5 7.5M4.5 16.5L12 21L19.5 16.5M19.5 7.5V16.5M4.5 7.5V16.5M12 12L12 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Adhikari Digital Arts</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-palette"></i> Gallery</a></li>
+                <li><a href="#about"><i class="fas fa-user-astronaut"></i> Artist</a></li>
+                <li><a href="#skills"><i class="fas fa-chart-line"></i> Art Specs</a></li>
+                <li><a href="#projects"><i class="fas fa-images"></i> Collections</a></li>
+                <li><a href="#experiences"><i class="fas fa-fingerprint"></i> Medium Details</a></li>
+                <li><a href="#product-delivery"><i class="fas fa-shopping-bag"></i> Acquisition</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope-open-text"></i> Contact</a></li>       
+            </ul>
+            <div class="theme-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="theme-switcher">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-sun light-mode-icon"></i>
+                <i class="fas fa-moon dark-mode-icon"></i>
             </div>
-            <span class="error-text">Enter a valid 16-digit card number.</span>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="card-expiry">Expiry Date</label>
-              <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
-              <span class="error-text">Format MM/YY.</span>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
             </div>
-            <div class="form-group">
-              <label for="card-cvv">CVV/CVC</label>
-              <input type="password" id="card-cvv" placeholder="123" maxlength="4" required>
-              <span class="error-text">3 or 4 digits.</span>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <canvas id="hero-background-canvas"></canvas>
+            <div class="hero-content">
+                <div class="intro-text-wrapper">
+                    <h1>Adhikari Arts<span class="Bold-text"> Digital Sovereignty </span></h1>
+                    <p class="tagline"> Elite Selling Platform <span id="typing-text"></span></p>
+                </div>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">Explore Gallery <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-secondary">Commission Art <i class="fas fa-handshake"></i></a>
+                </div>
+               <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script> 
+               <script src="hero-butterfly-animation.js"></script>
             </div>
-          </div>
+        </section>
 
-          <button type="submit" class="pay-btn">
-            <i class="fas fa-shield-alt"></i> Pay Rs 7000 Securely
-          </button>
-        </form>
+        <section id="about" class="about-section common-section">
+            <div class="container">
+                <h2><i class="fas fa-user-circle"></i> The Visual Artist & Strategist</h2>
+                <div class="about-grid">
+                    <div class="profile-image-container">
+                        <img src="/Assets/images/Adhikarilogo.svg" alt="Adhikari Digital Arts Profile Image" class="profile-img">
+                    </div> 
 
-        <!-- PayPal View -->
-        <div class="payment-tab-content" id-tab="paypal">
-          <div class="express-checkout-box">
-            <i class="fab fa-paypal paypal-large-icon"></i>
-            <p>You will be redirected to PayPal to authorize your payment safely.</p>
-            <button type="button" class="pay-btn paypal-btn" id="paypalPayBtn">
-              Proceed with <i class="fab fa-paypal"></i> PayPal
-            </button>
-          </div>
+                    <div class="about-text-content">
+                        <h3> Adhikari Digital Arts </h3>
+                        <p> Rooted in the design art, Adhikari Digital Arts represents a masterful creative painting to the cutting edge of digital canvases and cryptographic assets[cite: 1]. Founded by Pratik Adhikari, a visual arts academic and digital designer, this platform redefines art ownership for a decentralized, global era[cite: 1]. </p>
+
+                        <p> We merge structural clarity with profound emotional resonance, taking the wisdom of classical spatial form and re-interpreting it into high-fidelity dynamic visuals, vector graphics, and immersive Web3 motion art[cite: 1]. </p>
+
+                        <p> Immerse yourself in a curated environment built explicitly for serious art collectors, fine-art enthusiasts, and digital token pioneers looking to anchor their premium digital curation portfolios[cite: 1].
+                            
+                            "We are not leaving classical fine art behind; we are empowering it with a borderless digital language to converse with the future."
+                                                                                        — The Creative Strategy Vision </p>
+
+                          <div class="about-links">
+                            <a href="/Assets/images/Residency.pdf" target="_blank" class="btn btn-tertiary"><i class="fas fa-download"></i> View Artist CV</a>
+                            <a href="https://www.linkedin.com/in/pratik-adhikari-53a35b32a" target="_blank" class="btn btn-linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section common-section">
+            <div class="container">
+                <h2><i class="fas fa-tools"></i> DIGITAL ART METRICS & SPECIFICATIONS</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3> CANVAS & RENDER QUALITY </h3>
+                        <ul>
+                            <li data-level="100"> <i class="fas fa-vector-square skill-icon"></i> Resolution Scaling <div class="skill-level-bar"></div> </li>
+                            <li data-level="95"> <i class="fas fa-palette skill-icon"></i> Wide Color Gamut (P3) <div class="skill-level-bar"></div> </li>
+                            <li data-level="90"> <i class="fas fa-cube skill-icon"></i> 3D Texture Depth <div class="skill-level-bar"></div> </li>
+                            <li data-level="85"> <i class="fas fa-running skill-icon"></i> Motion Frame Optimization <div class="skill-level-bar"></div> </li>
+                            <li data-level="95"> <i class="fas fa-file-code skill-icon"></i> Vector Path Precision <div class="skill-level-bar"></div> </li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3> AUTHENTICITY & SECURITY </h3> 
+                        <ul class="security-attainment">  
+                            <li data-level="100"> <i class="fas fa-shield-halved skill-icon"></i> Cryptographic Provenance <div class="skill-level-bar"></div> </li>
+                            <li data-level="100"> <i class="fas fa-file-contract skill-icon"></i> Smart Contract Verification <div class="skill-level-bar"></div> </li>
+                            <li data-level="100"> <i class="fas fa-database skill-icon"></i> IPFS Decentralized Storage <div class="skill-level-bar"></div> </li>
+                            <li data-level="100"> <i class="fas fa-certificate skill-icon"></i> Signed Digital Certificate <div class="skill-level-bar"></div> </li>
+                            <li data-level="100"> <i class="fas fa-copyright skill-icon"></i> Commercial Licensing Rights <div class="skill-level-bar"></div> </li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3> ECO-FRIENDLY & BLOCKCHAIN SPECS</h3>
+                        <ul>
+                            <li data-level="95"> <i class="fas fa-leaf skill-icon"></i> Carbon-Neutral Minting <div class="skill-level-bar"></div> </li>
+                            <li data-level="80"> <i class="fas fa-network-wired skill-icon"></i> Layer-2 Scaling Support <div class="skill-level-bar"></div> </li>
+                            <li data-level="90"> <i class="fas fa-gas-pump skill-icon"></i> Gas-Optimized Transactions <div class="skill-level-bar"></div> </li>
+                            <li data-level="75"> <i class="fas fa-sync skill-icon"></i> Dynamic Metadata Adaptability <div class="skill-level-bar"></div> </li>
+                            <li data-level="85"> <i class="fas fa-link skill-icon"></i> Cross-Chain Interoperability <div class="skill-level-bar"></div> </li>
+                            <li data-level="95"> <i class="fas fa-id-badge skill-icon"></i> Creator Royalty Enforcement <div class="skill-level-bar"></div> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section common-section">
+            <div class="container">
+                <h2><i class="fas fa-rocket"></i> Featured Art Collections</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="/Assets/images/chicago .png" alt="E-commerce Website Screenshot">
+                        <div class="project-info">
+                            <h3>NFT Collectibles</h3>
+                            <p>A premier collection showcasing painterly digital techniques blended flawlessly into advanced digital motion assets.</p>
+                            <div class="project-tech">
+                                <span>Digital Arts</span><span>SVG</span><span>Three.js</span><span>Web3 Wallet</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://pratiklifestyle.vercel.app/" target="_blank" class="btn-link"><i class="fas fa-external-link-alt"></i> View Token</a>
+                                <a href="https://github.com/Designerpratikcreator/" target="_blank" class="btn-link"><i class="fab fa-github"></i> Contract</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="/Assets/images/burger.jpg" alt="Personal Blog Screenshot">
+                        <div class="project-info">
+                            <h3> Generative Concept Portals </h3>
+                            <p>An interactive, algorithmically fueled layout displaying spatial arrangements and dynamic lighting scripts[cite: 1].</p>
+                            <div class="project-tech">
+                                <span>HTML Canvas</span><span>CSS Variables</span><span>JS Core</span><span>IPFS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://patanpizzakitchen.vercel.app/" target="_blank" class="btn-link"><i class="fas fa-external-link-alt"></i> Open Sea</a>
+                                <a href="https://github.com/Designerpratikcreator/" target="_blank" class="btn-link"><i class="fab fa-github"></i> Metadata</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="/Assets/images/pratik cartoon.jpg" alt="Another Portfolio Screenshot">
+                        <div class="project-info">
+                            <h3>Chronicles Vector Collection</h3>
+                            <p>A striking thematic visual series exploring global climates, natural landscapes, and strategic creative design layouts[cite: 1].</p>
+                            <div class="project-tech">
+                                <span>Illustrator</span><span>GSAP Motion</span><span>Tailwind Canvas</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://pratikgraphics.vercel.app/" target="_blank" class="btn-link"><i class="fas fa-external-link-alt"></i> Rarible Live</a>
+                                <a href="https://github.com/Designerpratikcreator/" target="_blank" class="btn-link"><i class="fab fa-github"></i> IPFS Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiences" class="experiences-section common-section">
+            <div class="container">
+                <h2><i class="fas fa-graduation-cap"></i> Digital Medium Details</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3> Interactive Canvas | </h3>
+                            <p> “Art that responds to your environment.”</p>
+                            <ul>
+                                <li>Procedural renders, interactive nodes, dynamic shading scripts, and responsive canvases optimized perfectly for modern high-definition displays[cite: 1].</li>
+                                <li>Every pixel follows an aesthetic rule. Generative layouts, mathematical balance, and optimized shaders ensure beauty never strains performance[cite: 1].</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3> Vector & Pixels |</h3>
+                            <p> “The structural foundation of infinite scale.”</p>
+                            <ul>
+                                <li>Mathematically pure geometry capable of rendering infinitely sharp at billboard scales or small mobile viewing contexts[cite: 1].</li>
+                                <li>Advanced rendering engines regulate complex micro-gradients, allowing smooth transitions, vivid textures, and flawless structural composition[cite: 1].</li>
+                                <li>Resistant to asset degradation and digital compression; high-fidelity source formats maintain complete archival integrity across decades[cite: 1].</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                        <h3> Smart Contracts | </h3>
+                            <p>“Precision digital provenance.”</p> 
+                           <ul> 
+                               <li>Secured distributed ledgers resist altering, providing absolute immutability, programmatic creator proof, and clean verified historical logs[cite: 1].</li>
+                               <li>When structured properly, custom smart contracts execute seamless transactions, instantaneous digital custody updates, and direct peer-to-peer transfers[cite: 1].</li>
+                               <li>Deployed protocols bypass centralized intermediaries and guarantee autonomous execution for perpetual creator royalties[cite: 1].</li> 
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        <!-- ENHANCED ACQUISITION & INTEGRATED PAYMENT GATEWAY SECTION -->
+        <section id="product-delivery" class="application-section common-section">
+            <div class="container">
+                <h2><i class="fas fa-handshake"></i> ACQUIRE YOUR NFT TODAY</h2>
+                <p class="section-description">Complete collector verification and select your verified payment method below to initiate dynamic minting and provenance enrollment[cite: 1].</p>
+                
+                <form id="application-form" class="main-form" action="https://formspree.io/f/xdkzqdlq" method="POST" novalidate>
+                    <!-- STEP 1: COLLECTOR INFORMATION -->
+                    <div class="form-step-header">
+                        <span class="step-badge">1</span>
+                        <h3>Collector Details</h3>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="appName">Collector's Full Name <span class="required">*</span></label>
+                            <input type="text" id="appName" name="appName" placeholder="e.g. Jane Doe" required>
+                            <span class="error-msg" id="appName-error">Please enter your full legal name.</span>
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="appAge">Identity Age (Optional)</label>
+                            <input type="number" id="appAge" name="appAge" min="18" max="120" placeholder="e.g. 28">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="appGender">Preferred Pronoun/Prefix <span class="required">*</span></label>
+                            <input type="text" id="appGender" name="appGender" placeholder="e.g. They/Them, Ms., Mr." required>
+                            <span class="error-msg" id="appGender-error">This field is required.</span>
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="appEmail">Secure Email Address <span class="required">*</span></label>
+                            <input type="email" id="appEmail" name="email" placeholder="collector@domain.com" required>
+                            <span class="error-msg" id="appEmail-error">Provide a valid email address.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="appAddress">Web3 Wallet / ENS Destination <span class="required">*</span></label>
+                            <input type="text" id="appAddress" name="Address" placeholder="0x... or collector.eth" required>
+                            <span class="error-msg" id="appAddress-error">Valid crypto destination address required.</span>
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="appPhone">Phone Number (Optional)</label>
+                            <input type="tel" id="appPhone" name="appPhone" placeholder="+1 (555) 000-0000">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="propose-orderType">Edition Category Selection <span class="required">*</span></label>
+                            <select id="propose-orderType" name="projectType" required>
+                                <option value="">-- Select Masterpiece Class --</option>
+                                <option value="1of1" data-price="2500">1-of-1 Genesis Design Art ($2,500 USD)</option>
+                                <option value="limited" data-price="850">Limited Dynamic Edition ($850 USD)</option>
+                                <option value="generative" data-price="400">Generative Code Series ($400 USD)</option>
+                                <option value="custom" data-price="5000">Bespoke Commission Portfolio ($5,000 USD)</option>
+                            </select>
+                            <span class="error-msg" id="orderType-error">Please select an artwork edition class.</span>
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="projecttime">Licensing Terms Duration</label>
+                            <input type="text" id="projecttime" name="projecttime" placeholder="e.g. Perpetual Commercial Use">
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: PAYMENT GATEWAY UX/UI -->
+                    <div class="form-step-header" style="margin-top: 2rem;">
+                        <span class="step-badge">2</span>
+                        <h3>Secure Payment Gateway</h3>
+                    </div>
+
+                    <div class="payment-selection-container">
+                        <p class="payment-instruction">Select your preferred payment channel:</p>
+                        
+                        <div class="payment-methods-grid">
+                            <!-- Card Option -->
+                            <label class="payment-card-option active">
+                                <input type="radio" name="paymentMethod" value="card" checked>
+                                <div class="option-content">
+                                    <div class="option-header">
+                                        <i class="fas fa-credit-card method-icon"></i>
+                                        <span class="method-title">Credit / Debit Card</span>
+                                    </div>
+                                    <div class="brand-icons">
+                                        <i class="fab fa-cc-visa" title="Visa"></i>
+                                        <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                                        <i class="fab fa-cc-amex" title="American Express"></i>
+                                        <i class="fab fa-cc-discover" title="Discover"></i>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- PayPal Option -->
+                            <label class="payment-card-option">
+                                <input type="radio" name="paymentMethod" value="paypal">
+                                <div class="option-content">
+                                    <div class="option-header">
+                                        <i class="fab fa-paypal method-icon paypal-icon"></i>
+                                        <span class="method-title">PayPal</span>
+                                    </div>
+                                    <span class="method-subtitle">Express Checkout</span>
+                                </div>
+                            </label>
+
+                            <!-- Digital Wallets Option -->
+                            <label class="payment-card-option">
+                                <input type="radio" name="paymentMethod" value="digital_wallet">
+                                <div class="option-content">
+                                    <div class="option-header">
+                                        <i class="fas fa-mobile-alt method-icon"></i>
+                                        <span class="method-title">Apple Pay / Google Pay</span>
+                                    </div>
+                                    <div class="brand-icons">
+                                        <i class="fab fa-apple-pay" title="Apple Pay"></i>
+                                        <i class="fab fa-google-pay" title="Google Pay"></i>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- Crypto Option -->
+                            <label class="payment-card-option">
+                                <input type="radio" name="paymentMethod" value="crypto">
+                                <div class="option-content">
+                                    <div class="option-header">
+                                        <i class="fab fa-ethereum method-icon crypto-icon"></i>
+                                        <span class="method-title">Web3 Crypto</span>
+                                    </div>
+                                    <div class="brand-icons">
+                                        <i class="fab fa-bitcoin" title="Bitcoin"></i>
+                                        <i class="fab fa-ethereum" title="Ethereum"></i>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- DYNAMIC PAYMENT DETAILS PANELS -->
+                        <div class="payment-details-panel">
+                            
+                            <!-- Panel 1: Card Payment Details -->
+                            <div id="panel-card" class="payment-panel active">
+                                <div class="form-group">
+                                    <label for="cardHolder">Cardholder Name <span class="required">*</span></label>
+                                    <input type="text" id="cardHolder" name="cardHolder" placeholder="Exact name as printed on card">
+                                    <span class="error-msg" id="cardHolder-error">Please enter cardholder name.</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number <span class="required">*</span></label>
+                                    <div class="input-icon-wrapper">
+                                        <input type="text" id="cardNumber" name="cardNumber" placeholder="4532 •••• •••• ••••" maxlength="19">
+                                        <i id="detected-card-icon" class="far fa-credit-card card-brand-preview"></i>
+                                    </div>
+                                    <span class="error-msg" id="cardNumber-error">Enter a valid 16-digit card number.</span>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group half-width">
+                                        <label for="cardExpiry">Expiry Date (MM/YY) <span class="required">*</span></label>
+                                        <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/YY" maxlength="5">
+                                        <span class="error-msg" id="cardExpiry-error">Enter valid future expiry date (MM/YY).</span>
+                                    </div>
+                                    <div class="form-group half-width">
+                                        <label for="cardCvc">CVC / CVV <span class="required">*</span></label>
+                                        <div class="input-icon-wrapper">
+                                            <input type="password" id="cardCvc" name="cardCvc" placeholder="3 or 4 digits" maxlength="4">
+                                            <i class="fas fa-question-circle cvc-tooltip-icon" title="3-digit security code on back of card, or 4-digit code on front for Amex"></i>
+                                        </div>
+                                        <span class="error-msg" id="cardCvc-error">Enter valid CVC code.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Panel 2: PayPal Details -->
+                            <div id="panel-paypal" class="payment-panel">
+                                <div class="express-checkout-box">
+                                    <i class="fab fa-paypal express-logo"></i>
+                                    <p>You will be redirected to PayPal's secure gateway to finalize artwork authorization after submission.</p>
+                                    <div class="trusted-badge"><i class="fas fa-shield-alt"></i> Encrypted end-to-end processing</div>
+                                </div>
+                            </div>
+
+                            <!-- Panel 3: Digital Wallet -->
+                            <div id="panel-digital_wallet" class="payment-panel">
+                                <div class="express-checkout-box">
+                                    <div class="wallet-flex">
+                                        <i class="fab fa-apple-pay wallet-logo"></i>
+                                        <i class="fab fa-google-pay wallet-logo"></i>
+                                    </div>
+                                    <p>Biometric authentication will launch on your native mobile/desktop device to approve this transaction.</p>
+                                </div>
+                            </div>
+
+                            <!-- Panel 4: Crypto Details -->
+                            <div id="panel-crypto" class="payment-panel">
+                                <div class="crypto-wallet-box">
+                                    <p><i class="fas fa-link"></i> Connect Web3 Wallet or send directly to Studio Vault:</p>
+                                    <div class="crypto-address-display">
+                                        <code>0x71C7656EC7ab88b098defB751B7401B5f6d8976F</code>
+                                        <button type="button" id="copy-vault-btn" class="btn-copy" title="Copy Wallet Address"><i class="far fa-copy"></i> Copy</button>
+                                    </div>
+                                    <span class="crypto-note">Supports ETH, USDC, and USDT on Ethereum Mainnet & Polygon Layer-2[cite: 1].</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ORDER SUMMARY BREAKDOWN -->
+                    <div class="order-summary-box">
+                        <div class="summary-row">
+                            <span>Selected Class:</span>
+                            <span id="summary-class">Genesis Design Art (1-of-1)</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Art Token Value:</span>
+                            <span id="summary-price">$2,500.00 USD</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Network Minting Fee:</span>
+                            <span class="free-tag">Complimentary (0.00 USD)</span>
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row total-row">
+                            <span>Total Due Today:</span>
+                            <span id="summary-total">$2,500.00 USD</span>
+                        </div>
+                    </div>
+
+                    <div class="security-guarantee-strip">
+                        <span><i class="fas fa-lock"></i> 256-Bit SSL Secured Payment</span>
+                        <span><i class="fas fa-certificate"></i> Instant Provenance NFT Transfer</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-submit btn-block"> 
+                        <i class="fas fa-shield-alt"></i> AUTHORIZE & SECURE ARTWORK
+                    </button>
+                </form> 
+            </div>
+        </section>
+        
+        <section id="propose-project" class="application-section common-section">
+            <div class="container">
+                <h2><i class="fas fa-handshake"></i> Inquiry Message </h2>
+                <p class="section-description"> Reach out for specific curatorial requests or partnership offers[cite: 1]. </p>
+                 <form id="message-form" class="main-form" action="https://formspree.io/f/xdkzqdlq" method="POST"> 
+                <div class="form-group"> 
+                        <label for="appDetails"> Write your message :</label>
+                        <textarea id="appDetails" name="message" rows="8" placeholder="Detail your collection needs or creative strategy goals..." required></textarea>
+                </div>
+                    <button type="submit" class="btn btn-submit"> Send message <i class="fas fa-paper-plane"></i></button>
+                </form> 
+            </div>
+        </section>
+                            
+        <section id="contact" class="contact-section common-section">
+            <div class="container">
+                <h2><i class="fas fa-headset"></i> Get In Touch</h2>
+                <p class="section-description">Feel free to reach out to me directly or connect through social media.</p>
+                <div class="contact-grid">
+                    <div class="contact-info-card">
+                        <h3>Direct Contact</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <p>Gwarko, Lalitpur, Bagmati Province, Nepal</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt contact-icon"></i>
+                            <p><a href="tel:+9779861347187">+977 9861347187</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <p><a href="mailto:pratik_mhnrs2023@kusoa.edu.np">pratik_mhnrs2023@kusoa.edu.np</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <h3>Connect Online</h3>
+                        <div class="social-links-contact">
+                            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="https://github.com/Designerpratikcreator/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://www.linkedin.com/in/pratik-adhikari-53a35b32a/?originalSubdomain=np" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container relative">
+                    <div class="bg-gray-900 flex flex-col items-center justify-center min-h-screen p-4">
+                        <header class="header w-full max-w-4xl p-6 rounded-t-xl text-center mb-6">
+                            <h1 class="text-3xl md:text-4xl font-bold text-teal-300"> Studio Location Map </h1>
+                        </header>
+
+                        <!-- Main Map Container -->
+                        <div id="map-container" class="container w-full max-w-4xl h-[60vh] md:h-[70vh] rounded-b-xl border-4 border-teal-500 overflow-hidden relative shadow-lg map-container pulse-effect">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.990230230206!2d85.33758231505307!3d27.68725838279899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a0a8b9e691%3A0x6a213b78c4a0e980!2sGwarko%2C%20Lalitpur%2044700%2C%20Nepal!5e0!3m2!1sen!2snp!4v1678901234567!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+                            <div class="absolute inset-0 flex items-center justify-center p-4 text-center">
+                            </div>
+                        </div>
+
+                        <!-- Instructions -->
+                        <div class="controls-panel" style="text-align: center; margin-top: 20px;">
+                            <button id="toggle-animation" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105 active:scale-95">
+                                Start Directing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> ADHIKARI DIGITAL ARTS. All rights reserved. | BUILT BY THOUGHT.</p>
         </div>
-
-        <!-- Wallet View -->
-        <div class="payment-tab-content" id-tab="wallet">
-          <div class="express-checkout-box">
-            <p>Fast-track payment using verified digital wallets:</p>
-            <button type="button" class="pay-btn apple-pay-btn" id="applePayBtn">
-              <i class="fab fa-apple"></i> Pay with Apple Pay
-            </button>
-            <button type="button" class="pay-btn google-pay-btn" id="gPayBtn">
-              <i class="fab fa-google"></i> Pay with Google Pay
-            </button>
-          </div>
+        
+        <div class="qr-section" style="margin-top:40px;text-align:center;">
+            <h3>Acquire with Scan</h3>
+            <img src="/Assets/images/Pratikscan.jpeg" alt="QR Code" style="max-width:150px;border-radius:10px;box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         </div>
+    </footer>
 
-        <div class="security-badge">
-          <i class="fas fa-user-shield"></i> 256-Bit SSL Encrypted & PCI-DSS Compliant
+    <!-- AI Floating Chatbot Widget -->
+    <div id="chatbox-container">
+        <div id="chat-header">
+            <i class="fas fa-robot"></i> ADA Curatorial Assistant
         </div>
-      </div>
+        <div id="chat-messages">
+            <div class="chat-bubble ai-msg">Welcome to Adhikari Digital Arts! How can I assist with your art acquisition today?</div>
+        </div>
+        <div id="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Type your message here...">
+            <button id="send-btn" type="button"><i class="fas fa-paper-plane"></i></button>
+        </div>
     </div>
-  </section>
 
-  <section class="contact section-padding" id="contact">
-    <div class="section-title">
-      <h2>Contact Us</h2>
-      <p>Pratik Human Resource Pvt. Ltd.</p>
-    </div>
-
-    <div class="contact-container">
-      <div class="contact-info">
-        <h3>Company Information</h3>
-        <p><strong>Location:</strong> Gwarko, Lalitpur, Nepal</p>
-        <p><strong>Phone:</strong> +977-9800000000</p>
-        <p><strong>Email:</strong> pratik_mhnrs2023@kusoa.edu.np</p>
-        <p><strong>Office Hours:</strong> Sun - Fri | 9 AM - 6 PM</p>
-      </div>
-
-      <div class="map-container">
-        <iframe
-          src="https://maps.google.com/maps?q=Gwarko,%20Lalitpur,%20Nepal&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          width="100%"
-          height="350"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 Pratik Human Resource. All Rights Reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script_2.js"></script>
 </body>
 </html>
