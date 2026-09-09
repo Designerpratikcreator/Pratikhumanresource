@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons CDN for SVG Payment Logos and Header Navigation -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -26,6 +29,7 @@
         <li><a href="#jobs"><i class="fas fa-laptop-code"></i> Jobs Section</a></li>
         <li><a href="#recruit"><i class="fas fa-folder-open"></i> Recruit</a></li>
         <li><a href="#application"><i class="fas fa-handshake"></i> Application</a></li>
+        <li><a href="#payment"><i class="fas fa-credit-card"></i> Payment</a></li>
         <li><a href="#contact"><i class="fas fa-envelope-open-text"></i> Contact</a></li>       
       </ul>
 
@@ -163,6 +167,119 @@
       <textarea rows="5" placeholder="Describe your experience"></textarea>
       <button type="submit">Submit Application</button>
     </form>
+  </section>
+
+  <!-- PAYMENT GATEWAY SECTION -->
+  <section class="payment section-padding" id="payment">
+    <div class="section-title">
+      <h2>Secure Payment Gateway</h2>
+      <p>Complete application fee process safely</p>
+    </div>
+
+    <div class="payment-wrapper">
+      <!-- Summary Box -->
+      <div class="payment-summary">
+        <h3>Application Details</h3>
+        <div class="summary-item">
+          <span>Processing Fee</span>
+          <span>$50.00</span>
+        </div>
+        <div class="summary-item">
+          <span>Tax (13% VAT)</span>
+          <span>$6.50</span>
+        </div>
+        <hr class="summary-divider">
+        <div class="summary-item total">
+          <span>Total Payable</span>
+          <span>$56.50</span>
+        </div>
+      </div>
+
+      <!-- Payment Methods -->
+      <div class="payment-card">
+        <div class="payment-tabs">
+          <button type="button" class="tab-btn active" data-tab="card">
+            <i class="fas fa-credit-card"></i> Card
+          </button>
+          <button type="button" class="tab-btn" data-tab="paypal">
+            <i class="fab fa-paypal"></i> PayPal
+          </button>
+          <button type="button" class="tab-btn" data-tab="wallet">
+            <i class="fab fa-apple"></i> / <i class="fab fa-google"></i> Express
+          </button>
+        </div>
+
+        <!-- Card Form View -->
+        <form id="paymentForm" class="payment-tab-content active" id-tab="card" novalidate>
+          <div class="card-brand-icons">
+            <i class="fab fa-cc-visa visa-color" title="Visa"></i>
+            <i class="fab fa-cc-mastercard master-color" title="Mastercard"></i>
+            <i class="fab fa-cc-amex amex-color" title="American Express"></i>
+            <i class="fab fa-cc-discover discover-color" title="Discover"></i>
+          </div>
+
+          <div class="form-group">
+            <label for="cardholder-name">Cardholder Name</label>
+            <input type="text" id="cardholder-name" placeholder="John Doe" required>
+            <span class="error-text">Please enter name as printed on card.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <div class="input-with-icon">
+              <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+              <i class="fas fa-lock input-icon"></i>
+            </div>
+            <span class="error-text">Enter a valid 16-digit card number.</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="card-expiry">Expiry Date</label>
+              <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
+              <span class="error-text">Format MM/YY.</span>
+            </div>
+            <div class="form-group">
+              <label for="card-cvv">CVV/CVC</label>
+              <input type="password" id="card-cvv" placeholder="123" maxlength="4" required>
+              <span class="error-text">3 or 4 digits.</span>
+            </div>
+          </div>
+
+          <button type="submit" class="pay-btn">
+            <i class="fas fa-shield-alt"></i> Pay $56.50 Securely
+          </button>
+        </form>
+
+        <!-- PayPal View -->
+        <div class="payment-tab-content" id-tab="paypal">
+          <div class="express-checkout-box">
+            <i class="fab fa-paypal paypal-large-icon"></i>
+            <p>You will be redirected to PayPal to authorize your payment safely.</p>
+            <button type="button" class="pay-btn paypal-btn" id="paypalPayBtn">
+              Proceed with <i class="fab fa-paypal"></i> PayPal
+            </button>
+          </div>
+        </div>
+
+        <!-- Wallet View -->
+        <div class="payment-tab-content" id-tab="wallet">
+          <div class="express-checkout-box">
+            <p>Fast-track payment using verified digital wallets:</p>
+            <button type="button" class="pay-btn apple-pay-btn" id="applePayBtn">
+              <i class="fab fa-apple"></i> Pay with Apple Pay
+            </button>
+            <button type="button" class="pay-btn google-pay-btn" id="gPayBtn">
+              <i class="fab fa-google"></i> Pay with Google Pay
+            </button>
+          </div>
+        </div>
+
+        <div class="security-badge">
+          <i class="fas fa-user-shield"></i> 256-Bit SSL Encrypted & PCI-DSS Compliant
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="contact section-padding" id="contact">
